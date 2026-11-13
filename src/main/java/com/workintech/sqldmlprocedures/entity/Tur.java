@@ -1,13 +1,7 @@
 package com.workintech.sqldmlprocedures.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 @Entity
 @Table(name = "tur")
 public class Tur {
@@ -15,4 +9,16 @@ public class Tur {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long turno;
     private String ad;
+
+    public Tur() {}
+
+    public Tur(long turno, String ad) {
+        this.turno = turno;
+        this.ad = ad;
+    }
+
+    public long getTurno() { return turno; }
+    public void setTurno(long turno) { this.turno = turno; }
+    public String getAd() { return ad; }
+    public void setAd(String ad) { this.ad = ad; }
 }
